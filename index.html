@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pet list</title>
+    <!-- Ionic CDN -->
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"
+    />
+    <style>
+      .item-content {
+        width: 100%;
+      }
+      .item-title {
+        font-weight: bold;
+        margin: 0.25rem 0;
+      }
+      .item-subtitle {
+        color: var(--ion-color-medium);
+        font-size: 0.9em;
+      }
+      .tag-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <ion-app>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Pet list</ion-title>
+        </ion-toolbar>
+        <ion-searchbar placeholder="Search..."></ion-searchbar>
+        <ion-item>
+          <ion-select label="Pet" interface="popover">
+            <ion-select-option value="All">All</ion-select-option>
+            <ion-select-option value="petList">petList</ion-select-option>
+            <ion-select-option value="Breeds">Breeds</ion-select-option>
+            <ion-select-option value="Size">Size</ion-select-option>
+            <ion-select-option value="Characteristics">Characteristics</ion-select-option>
+            <ion-select-option value="Cares">Cares</ion-select-option>
+            <!-- 根據主題加入分類選項 -->
+          </ion-select>
+        </ion-item>
+      </ion-header>
+
+      <ion-content>
+        <ion-list>
+          <!-- 清單項目範本 -->
+          <ion-item class="list-item">
+            <div class="item-content">
+              <div class="item-title">寵物</div>
+              <div class="item-subtitle">size: large, medium, small</div>
+              <div class="item-details">詳細資訊</div>
+              <div class="tag-container">
+                <ion-chip size="medium">分類</ion-chip>
+                <ion-chip size="small">貓</ion-chip>
+                <ion-chip size="small">狗</ion-chip>
+                <ion-chip size="small">魚</ion-chip>
+                <ion-chip size="small">龜</ion-chip>
+                <ion-chip size="small">變色龍</ion-chip>
+                <ion-chip size="small">兔子</ion-chip>
+                <ion-chip size="small">鳥</ion-chip>
+              </div>
+            </div>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-app>
+    <script>
+      let items = [
+    {
+      title: "金髮獵犬",
+      type: "大型",
+      features: "友善、聰明、適合家庭",
+      careTips: "需要大量運動和定期梳理毛髮",
+      imageUrl: "https://example.com/images/golden_retriever.jpg", // 替換為真實圖片網址
+      videoUrl: "https://www.youtube.com/embed/VIDEO_ID",
+    },
+    {
+      title: "英國短毛貓",
+      type: "中型",
+      features: "獨立、好奇、適應力強",
+      careTips: "定期需要清潔耳朵，提供高品質貓糧",
+      imageUrl: "https://example.com/images/british_shorthair.jpg", // 替換為真實圖片網址
+      videoUrl: "https://www.youtube.com/embed/VIDEO_ID",
+    },
+    {
+      title: "哈士奇",
+      type: "大型",
+      features: "活潑、忠誠，需要大量運動",
+      careTips: "需要定期梳理和運動",
+      imageUrl: "https://example.com/images/husky.jpg",
+      videoUrl: "https://www.youtube.com/embed/VIDEO_ID",
+    },
+    {
+      title: "比熊犬",
+      type: "小型",
+      features: "友善、聰明、容易訓練",
+      careTips: "需要定期美容",
+      imageUrl: "https://example.com/images/bichon.jpg",
+      videoUrl: "https://www.youtube.com/embed/VIDEO_ID",
+    },
+    {
+      title: "法國鬥犬",
+      type: "小型",
+      features: "好動、勇敢、親人",
+      careTips: "需要每天散步",
+      imageUrl: "https://example.com/images/french_bulldog.jpg",
+      videoUrl: "https://www.youtube.com/embed/VIDEO_ID",
+    },
+    // 繼續添加其他寵物項目...
+    {
+      title: "德國牧羊犬",
+      type: "大型",
+      features: "聰明、忠貞、適合守衛",
+      careTips: "需要大量運動",
+      imageUrl: "https://example.com/images/german_shepherd.jpg",
+      videoUrl: "https://www.youtube.com/embed/VIDEO_ID",
+    },
+    {
+      title: "拉布拉多",
+      type: "大型",
+      features: "友善、聰明、適合家庭",
+      careTips: "每天需要運動",
+      imageUrl: "https://example.com/images/labrador.jpg",
+      videoUrl: "https://www.youtube.com/embed/VIDEO_ID",
+    },
+    {
+      title: "波士頓犬",
+      type: "小型",
+      features: "活潑、親人、容易相處",
+      careTips: "需要定期運動",
+      imageUrl: "https://example.com/images/boston_terrier.jpg",
+      videoUrl: "https://www.youtube.com/embed/VIDEO_ID",
+    },
+    {
+      title: "邊境牧羊犬",
+      type: "中型",
+      features: "聰明、運動量大、適合工作",
+      careTips: "需要大量運動和智力遊戲",
+      imageUrl: "https://example.com/images/border_collie.jpg",
+      videoUrl: "https://www.youtube.com/embed/VIDEO_ID",
+    },
+    {
+      title: "拉薩犬",
+      type: "小型",
+      features: "獨立、保護意識強",
+      careTips: "需要定期美容",
+      imageUrl: "https://example.com/images/lhasa_apso.jpg",
+      videoUrl: "https://www.youtube.com/embed/VIDEO_ID",
+    },
+    // 添加其他呢...
+];
+  
+        const listContainer = document.querySelector("ion-list");
+  
+        items.forEach (item) => {
+          const listItem = document.createElement("ion-item");
+          listItem.classList.add("list-item");
+  
+          const itemContent = document.createElement("div");
+          itemContent.classList.add("item-content");
+  
+          const itemTitle = document.createElement("div");
+          itemTitle.classList.add("item-title");
+          itemTitle.textContent = item.title;
+  
+          const itemSubtitle = document.createElement("div");
+          itemSubtitle.classList.add("item-subtitle");
+          itemSubtitle.textContent = `size: ${item.type}`;
+  
+          const itemDetails = document.createElement("div");
+          itemDetails.classList.add("item-details");
+          itemDetails.textContent = `特徵: ${item.features}`;
+  
+          const tagContainer = document.createElement("div");
+          tagContainer.classList.add("tag-container");
+  
+          // 添加標籤
+          ["貓", "狗", "魚", "龜", "變色龍", "兔子", "鳥"].forEach((tag) => {
+            const chip = document.createElement("ion-chip");
+            chip.textContent = tag;
+            tagContainer.appendChild(chip);
+          });
+  
+          // 添加圖片和影片
+          const image = document.createElement("img");
+          image.src = item.imageUrl;
+          image.alt = `${item.title} image`;
+          image.style.width = "100%";
+          image.style.borderRadius = "8px";
+  
+          const videoFrame = document.createElement("iframe");
+          videoFrame.src = item.videoUrl;
+          videoFrame.width = "100%";
+          videoFrame.height = "200";
+          videoFrame.frameBorder = "0";
+          videoFrame.allowFullscreen = true;
+  
+          // 將元素添加到列表項目中
+          itemContent.appendChild(itemTitle);
+          itemContent.appendChild(itemSubtitle);
+          itemContent.appendChild(itemDetails);
+          itemContent.appendChild(tagContainer);
+          listItem.appendChild(image);
+          listItem.appendChild(videoFrame);
+    </script>
+  </body>
+</html>
+
