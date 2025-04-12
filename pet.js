@@ -1,131 +1,82 @@
-// 初始化資料
-let items = [
-    {
-      title: "金髮獵犬",
-      type: "大型",
-      features: "友善、聰明、適合家庭",
-      careTips: "需要大量運動和定期梳理毛髮",
-      imageUrl: "https://example.com/images/golden_retriever.jpg", // 替換為真實圖片網址
-      videoUrl: "https://www.youtube.com/embed/VIDEO_ID",
-    },
-    {
-      title: "英國短毛貓",
-      type: "中型",
-      features: "獨立、好奇、適應力強",
-      careTips: "定期需要清潔耳朵，提供高品質貓糧",
-      imageUrl: "https://example.com/images/british_shorthair.jpg", // 替換為真實圖片網址
-      videoUrl: "https://www.youtube.com/embed/VIDEO_ID",
-    },
-    {
-      title: "哈士奇",
-      type: "大型",
-      features: "活潑、忠誠，需要大量運動",
-      careTips: "需要定期梳理和運動",
-      imageUrl: "https://example.com/images/husky.jpg",
-      videoUrl: "https://www.youtube.com/embed/VIDEO_ID",
-    },
-    {
-      title: "比熊犬",
-      type: "小型",
-      features: "友善、聰明、容易訓練",
-      careTips: "需要定期美容",
-      imageUrl: "https://example.com/images/bichon.jpg",
-      videoUrl: "https://www.youtube.com/embed/VIDEO_ID",
-    },
-    {
-      title: "法國鬥犬",
-      type: "小型",
-      features: "好動、勇敢、親人",
-      careTips: "需要每天散步",
-      imageUrl: "https://example.com/images/french_bulldog.jpg",
-      videoUrl: "https://www.youtube.com/embed/VIDEO_ID",
-    },
-    // 繼續添加其他寵物項目...
-    {
-      title: "德國牧羊犬",
-      type: "大型",
-      features: "聰明、忠貞、適合守衛",
-      careTips: "需要大量運動",
-      imageUrl: "https://example.com/images/german_shepherd.jpg",
-      videoUrl: "https://www.youtube.com/embed/VIDEO_ID",
-    },
-    {
-      title: "拉布拉多",
-      type: "大型",
-      features: "友善、聰明、適合家庭",
-      careTips: "每天需要運動",
-      imageUrl: "https://example.com/images/labrador.jpg",
-      videoUrl: "https://www.youtube.com/embed/VIDEO_ID",
-    },
-    {
-      title: "波士頓犬",
-      type: "小型",
-      features: "活潑、親人、容易相處",
-      careTips: "需要定期運動",
-      imageUrl: "https://example.com/images/boston_terrier.jpg",
-      videoUrl: "https://www.youtube.com/embed/VIDEO_ID",
-    },
-    {
-      title: "邊境牧羊犬",
-      type: "中型",
-      features: "聰明、運動量大、適合工作",
-      careTips: "需要大量運動和智力遊戲",
-      imageUrl: "https://example.com/images/border_collie.jpg",
-      videoUrl: "https://www.youtube.com/embed/VIDEO_ID",
-    },
-    {
-      title: "拉薩犬",
-      type: "小型",
-      features: "獨立、保護意識強",
-      careTips: "需要定期美容",
-      imageUrl: "https://example.com/images/lhasa_apso.jpg",
-      videoUrl: "https://www.youtube.com/embed/VIDEO_ID",
-    },
-    // 添加其他呢...
-];
-
-
-// 更新清單顯示
-function updateList(searchTerm = '', categoryFilter = '') {
-  const list = document.querySelector('ion-list'); // 獲取 ion-list 元素
-  list.innerHTML = ''; // 清空現有清單
-
-  // 根據搜尋條件過濾資料
-  const filteredItems = items.filter(item => {
-    const matchesSearchTerm = searchTerm ? 
-      item.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
-      item.features.toLowerCase().includes(searchTerm.toLowerCase()) 
-      : true;
-
-    const matchesCategory = categoryFilter ? 
-      item.type.toLowerCase() === categoryFilter.toLowerCase() 
-      : true;
-
-    return matchesSearchTerm && matchesCategory;
-  });
-
-  // 如果沒有匹配項目，顯示提示
-  if (filteredItems.length === 0) {
-    list.innerHTML = '<ion-item>No results found.</ion-item>';
-    return;
+const items = [
+  {
+      品種: '英國短毛貓',
+      體型: '中型',
+      特性: '獨立，愛乾淨',
+      照顧重點: '定期梳毛，提供適當的環境',
+      tags: ['cat', 'independent'],
+      imageUrl: 'https://via.placeholder.com/150',
+      videoUrl: 'dQw4w9WgXcQ',
+      類別: '貓類'
+  },
+  {
+      品種: '哈士奇',
+      體型: '大型',
+      特性: '活潑，社交',
+      照顧重點: '需要大量運動',
+      tags: ['dog', 'active'],
+      imageUrl: 'https://via.placeholder.com/150',
+      videoUrl: 'dQw4w9WgXcQ',
+      類別: '狗類'
+  },
+  {
+      品種: '德文卷毛貓',
+      體型: '小型',
+      特性: '好動，熱情',
+      照顧重點: '定期洗澡和修剪',
+      tags: ['cat', 'active'],
+      imageUrl: 'https://via.placeholder.com/150',
+      videoUrl: 'dQw4w9WgXcQ',
+      類別: '貓類'
+  },
+  {
+      品種: '比熊犬',
+      體型: '小型',
+      特性: '友善，聰明',
+      照顧重點: '定期梳毛和運動',
+      tags: ['dog', 'friendly'],
+      imageUrl: 'https://via.placeholder.com/150',
+      videoUrl: 'dQw4w9WgXcQ',
+      類別: '狗類'
+  },
+  {
+      品種: '金魚',
+      體型: '小型',
+      特性: '平靜，易於照顧',
+      照顧重點: '保持水質清潔',
+      tags: ['fish', 'easy'],
+      imageUrl: 'https://via.placeholder.com/150',
+      videoUrl: 'dQw4w9WgXcQ',
+      類別: '魚類'
+  },
+  {
+      品種: '橘貓',
+      體型: '中型',
+      特性: '友好，活潑',
+      照顧重點: '良好的飲食和訓練',
+      tags: ['cat', 'playful'],
+      imageUrl: 'https://via.placeholder.com/150',
+      videoUrl: 'dQw4w9WgXcQ',
+      類別: '貓類'
+  },
+  {
+      品種: '拉布拉多',
+      體型: '大型',
+      特性: '友善，家庭犬',
+      照顧重點: '定期運動和社交',
+      tags: ['dog', 'friendly'],
+      imageUrl: 'https://via.placeholder.com/150',
+      videoUrl: 'dQw4w9WgXcQ',
+      類別: '狗類'
+  },
+  {
+      品種: '倉鼠',
+      體型: '小型',
+      特性: '好動，適合初學者',
+      照顧重點: '提供運動輪和適合的飼料',
+      tags: ['hamster', 'small'],
+      imageUrl: 'https://via.placeholder.com/150',
+      videoUrl: 'dQw4w9WgXcQ',
+      類別: '鼠類'
   }
-
-  // 遍歷過濾後的項目並生成 HTML
-  filteredItems.forEach(item => {
-    const listItem = `
-      <ion-item>
-        <ion-thumbnail slot="start">
-          <img src="${item.imageUrl}" alt="${item.title}" />
-        </ion-thumbnail>
-        <ion-label>
-          <h2>${item.title}</h2>
-          <h3>${item.type}</h3>
-          <p>${item.features}</p>
-          <p>${item.careTips}</p>
-        </ion-label>
-        <ion-button onclick="window.open('${item.videoUrl}', '_blank')">觀看影片</ion-button>
-      </ion-item>`;
-  
-    list.innerHTML += listItem; // 添加清單項目
-  });
-}
+]
