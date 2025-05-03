@@ -1,0 +1,28 @@
+{
+  "name": "assigment.10",
+  "version": "1.0.0",
+  "description": "寵物品種大全 Web 應用 | Pet Web App\r 這是一個使用 HTML、CSS 和 JavaScript 結合 Ionic 框架開發的寵物品種清單應用程式。應用提供了 20多種寵物品種的詳細資訊，包括品種名稱、體型、特性、照顧重點、寵物圖片、介紹影片。",
+  "main": "pet.js",
+  "scripts": {
+    "build": "esbuild app.ts --bundle --outfile=bundle.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haymanmankwong1229/assigment.10.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/haymanmankwong1229/assigment.10/issues"
+  },
+  "homepage": "https://github.com/haymanmankwong1229/assigment.10#readme",
+  "dependencies": {
+    "@capacitor/cli": "^7.2.0",
+    "@capacitor/core": "^7.2.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.3"
+  }
+}
