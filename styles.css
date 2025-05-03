@@ -16,7 +16,7 @@ body {
     font-weight: bold;
     font-size: 1.2em;
     font-family: "Lucida Calligraphy", cursive, serif, sans-serif;
-    background-color: rgb(179, 249, 226);
+    background-color: rgb(250, 226, 234);
 
     border-top-left-radius: 2em 0.5em;
     border-top-right-radius: 1em 3em;
@@ -35,7 +35,7 @@ body {
   
   .soft-toolbar {
     --background: #fdf2fa; 
-    --color: #317823; 
+    --color: #876c12; 
     
   }
   
